@@ -1,0 +1,115 @@
+.auth-layout {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.auth-layout > * {
+  width: min(100%, 500px);
+  padding: 32px;
+}
+.auth-layout h1 {
+  font-size: var(--type-page);
+  font-weight: 700;
+}
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  color: var(--school-text);
+}
+.auth-description {
+  margin: 12px 0 24px;
+  color: var(--school-muted);
+}
+.school-form {
+  display: grid;
+  gap: 18px;
+}
+.school-setup-card {
+  padding: 24px;
+}
+.school-setup-card .card-heading {
+  padding: 0;
+}
+.school-form label {
+  display: block;
+  color: var(--school-text);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.school-form input:not([type="hidden"]) {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 13px;
+  border: 1px solid var(--school-border);
+  border-radius: 9px;
+  background: var(--school-surface);
+  color: var(--school-text);
+}
+.school-form .school-select-trigger {
+  width: 100%;
+}
+.school-form a,
+.auth-layout p a {
+  color: var(--school-primary);
+  font-weight: 500;
+}
+.form-error {
+  padding: 12px;
+  border-radius: 9px;
+  background: #fff0ef;
+  color: #a52b28;
+  overflow-wrap: anywhere;
+}
+.form-message {
+  padding: 12px;
+  border-radius: 9px;
+  background: #e6f7ee;
+  color: #226742;
+}
+.form-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.auth-signout {
+  margin-top: 24px;
+}
+.profile-details strong {
+  display: block;
+  max-width: 180px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.setup-list {
+  padding-left: 20px;
+  margin: 18px 0;
+  color: var(--school-text);
+}
+.setup-list li {
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+.school-access-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.school-access-bar form {
+  display: flex;
+  gap: 12px;
+}
+@media (max-width: 480px) {
+  .form-columns {
+    grid-template-columns: 1fr;
+  }
+  .auth-layout {
+    padding: 16px;
+  }
+}

@@ -1,5 +1,7 @@
 # Developer 2 — rehan-ayaz
 
+Foundation implementation update: auth, active school context and academic setup are on `chore/platform-foundation`; seven dev tables/RLS are applied. Read [FOUNDATION_HANDOFF.md](FOUNDATION_HANDOFF.md) for exact contracts, release checks and one-time migration-history repair. Review this foundation before starting staff work, then merge the released main into your branch. Use `requireSchool()` in every feature server operation and existing `branches`/session/class UUIDs. Team membership still needs explicit provisioning; signup alone does not join the shared school.
+
 Work plan dated 29 October 2026, Asia/Karachi. GitHub: **rehan-ayaz**. Partner/shared owner: **algofort**. This is a self-contained planning file, not a claim that features are implemented.
 
 ## Your ownership

@@ -2,6 +2,8 @@
 
 Owners: algofort (setup/release), rehan-ayaz (review/module work). Date: 29 October 2026.
 
+Current baseline deployment: https://schoolsaas-lake.vercel.app/ . Health endpoint verified HTTP 200 on 29 October 2026, reporting foundation mode. Database project `schoolsaas-dev` is selected and its first schema is applied; the auth/academic code on `chore/platform-foundation` still needs release. Read [foundation handoff](FOUNDATION_HANDOFF.md), including migration-history reconciliation. Git integration, production branch selection, collaborator access and required checks still need account-level verification.
+
 ## First do this, in order
 
 1. Review the existing foundation and both developer plans, then push the clean baseline to https://github.com/algofort/schoolsaas.git . No credentials or competitor archives in Git.
@@ -59,7 +61,7 @@ Supabase URL/publishable key can be public; service keys, webhook secrets and em
 
 ## Database rollout
 
-Use reviewed migration files and generated types, one migration owner, local replay and tenant-policy tests. Verify new Data API grants separately from RLS. Do not directly reset a hosted database. The current repo contains no actual schema migration yet. Introduce deployment workflows only after project references, staging/production credentials, migration approval and rollout order are known. Database changes need their own approval/test gate; old frontend previews may still run, so keep migrations backward compatible.
+Use reviewed migration files and validated contracts, one migration owner, local replay and tenant-policy tests. Verify new Data API grants separately from RLS. Do not directly reset a hosted database. The first foundation migration is now applied to dev through the SQL editor; reconcile its CLI history as described in FOUNDATION_HANDOFF.md before `db push`. CLI-generated database types remain a follow-up to the validated runtime contracts. Introduce deployment workflows only after staging/production credentials, migration approval and rollout order are known. Database changes need their own test gate; old frontend previews may still run, so keep migrations backward compatible.
 
 ## n8n rollout
 
@@ -67,6 +69,6 @@ Run n8n on persistent hosting or n8n Cloud, separately from Vercel. Configure a 
 
 ## What still requires connected account access
 
-Vercel import/team settings, actual deployment URL, repository collaborator/protection settings, Supabase organization/project selection and cloud database configuration. Repository branches and local documents alone do not create these account settings. No new paid service/project should be chosen without the user's account/project/budget context.
+Vercel Git/team settings, repository collaborator/protection settings, Supabase organization/project selection and cloud database configuration. The initial Vercel URL is live. Repository branches and local documents alone do not create these account settings. No new paid service/project should be chosen without the user's account/project/budget context.
 
 Official references: https://vercel.com/docs/deployments/git ; https://vercel.com/docs/deployments/environments ; https://supabase.com/docs/guides/deployment/managing-environments .

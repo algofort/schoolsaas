@@ -1,5 +1,7 @@
 # Developer 1 — algofort
 
+Foundation implementation update: auth, active school context and academic setup are on `chore/platform-foundation`; seven dev tables/RLS are applied. Read [FOUNDATION_HANDOFF.md](FOUNDATION_HANDOFF.md) for exact contracts, release checks and one-time migration-history repair. Gate 0 is not released until review/merge and real account/onboarding acceptance. Use `requireSchool()` in every feature server operation; do not create a competing auth/context schema.
+
 Work plan dated 29 October 2026, Asia/Karachi. GitHub: **algofort**. Partner: **rehan-ayaz**. This is a self-contained planning file, not a claim that features are implemented.
 
 ## Your ownership

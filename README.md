@@ -13,7 +13,7 @@ npm run dev
 
 Open http://127.0.0.1:3000. The root redirects to `/dashboard`.
 
-The preview runs without credentials. Copy `.env.example` to `.env.local` only when configuring integrations. Never paste service-role keys, workflow secrets or email credentials into client code or public environment variables.
+Copy `.env.example` to `.env.local` and configure the Supabase URL and publishable key. The workspace now requires sign-in and an active school membership. Without configuration, `/login` explains the missing setup; school pages remain protected. Never paste service-role keys, workflow secrets or email credentials into client code or public environment variables.
 
 ## What's included
 
@@ -25,7 +25,7 @@ The preview runs without credentials. Copy `.env.example` to `.env.local` only w
 - Basic liveness endpoint: `/api/health` (not a database readiness check).
 - Lint, typecheck, build, CI, PR template and team guidelines.
 
-All names, figures and chart values in the preview are fictional fixtures. There is no authentication, school database, real fee calculation, email sending or connected n8n workflow yet. Do not expose the preview as a production school system.
+Email/password authentication, school onboarding, active membership checks, tenant RLS and academic setup are implemented. Dashboard and student records remain fictional fixtures. There is no real fee calculation, business email sending or connected n8n workflow yet. Read [foundation handoff](docs/FOUNDATION_HANDOFF.md) for release gates and known limits.
 
 ## Commands
 
@@ -63,7 +63,7 @@ Prefer feature components in `src/features/<module>/components`. Shared UI must 
 
 ## Working together
 
-Read [team workflow](docs/TEAM_WORKFLOW.md), [architecture decisions](docs/ARCHITECTURE.md) and [contributing](CONTRIBUTING.md). Do not edit shared layout, global styling or schema in parallel without coordinating ownership. The GitHub remote and repository protection rules have not been configured; they require the repository URL and appropriate repository permissions.
+Read [team workflow](docs/TEAM_WORKFLOW.md), [architecture decisions](docs/ARCHITECTURE.md) and [contributing](CONTRIBUTING.md). Do not edit shared layout, global styling or schema in parallel without coordinating ownership. GitHub remote: https://github.com/algofort/schoolsaas.git . Repository protection and collaborator settings remain unverified.
 
 ## Template rights
 
@@ -71,4 +71,4 @@ See [Akademi asset notice](vendor/akademi/NOTICE.md). This project does not gran
 
 ## Next implementation phase
 
-Agree the school/branch/membership/guardian schema and permission model, implement real authentication and tenant context, and apply tested database policies before replacing sample fixtures with live records. Notification outbox delivery, n8n and messaging providers come after transactional business events exist.
+Review and release the shared authentication/academic foundation, then implement students/guardians and staff/attendance against its school context and UUID contracts. Notification outbox delivery, n8n and messaging providers come after transactional business events exist.

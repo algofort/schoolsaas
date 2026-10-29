@@ -6,8 +6,18 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowUpRight, GraduationCap, Menu, Moon, Search, Sun, X } from "lucide-react";
 import { modules } from "@/config/modules";
 import { cn } from "@/lib/utils";
+import { signOut } from "@/features/auth/actions";
+import type { SchoolRole } from "@/features/school/contracts";
 
-export function WorkspaceShell({ children }: { children: ReactNode }) {
+export function WorkspaceShell({
+  children,
+  schoolName,
+  role,
+}: {
+  children: ReactNode;
+  schoolName: string;
+  role: SchoolRole;
+}) {
   const path = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [theme, setTheme] = useState("light");
@@ -131,6 +141,11 @@ export function WorkspaceShell({ children }: { children: ReactNode }) {
             </Link>
           </div>
           <p className="sidebar-credit">Akademi design foundation · v0.1</p>
+          <form action={signOut}>
+            <button type="submit" className="school-button school-button--ghost">
+              Sign out
+            </button>
+          </form>
         </div>
       </aside>
       <div className="workspace-body">
@@ -188,14 +203,14 @@ export function WorkspaceShell({ children }: { children: ReactNode }) {
             <Link
               href="/settings"
               className="profile-summary"
-              aria-label="AddizTech administrator workspace settings"
+              aria-label="School workspace settings"
             >
               <span className="profile-avatar">
                 <GraduationCap size={23} strokeWidth={1.7} />
               </span>
               <span className="profile-details">
-                <strong>AddizTech</strong>
-                <small>Administrator</small>
+                <strong>{schoolName}</strong>
+                <small>{role}</small>
               </span>
               <ArrowUpRight className="profile-link-icon" size={16} aria-hidden="true" />
             </Link>

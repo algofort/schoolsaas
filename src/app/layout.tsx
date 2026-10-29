@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { WorkspaceShell } from "@/components/layout/workspace-shell";
 import "@/styles/akademi.css";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";
@@ -8,6 +7,7 @@ import "@fontsource/poppins/700.css";
 import "./globals.css";
 import "@/styles/typography.css";
 import "@/styles/form-controls.css";
+import "@/styles/workspace-forms.css";
 
 export const metadata: Metadata = {
   title: { default: "School Workspace", template: "%s | School Workspace" },
@@ -19,9 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
-        <WorkspaceShell>{children}</WorkspaceShell>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
