@@ -1,4 +1,18 @@
 /* Shared form appearance; typography inherits the Akademi scale. */
+/* Akademi stretches an invisible, absolutely positioned native calendar trigger.
+   Keep it in the input's normal flow so it cannot intercept unrelated clicks. */
+.workspace input[type="date"] {
+  position: relative;
+}
+.workspace input[type="date"]::-webkit-calendar-picker-indicator {
+  position: static;
+  inset: auto;
+  width: 1em;
+  height: 1em;
+  background: revert;
+  color: inherit;
+  cursor: pointer;
+}
 .workspace input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):focus,
 .workspace textarea:focus,
 .workspace .form-control:focus,
