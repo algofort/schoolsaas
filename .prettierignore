@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+vendor
+public/vendor
+src/styles/akademi.css
+research
+package-lock.json
+next-env.d.ts
+*.tsbuildinfo
+.env*
+.schoolapp-research-credentials.txt

@@ -1,0 +1,95 @@
+/* Shared form appearance; typography inherits the Akademi scale. */
+.workspace input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):focus,
+.workspace textarea:focus,
+.workspace .form-control:focus,
+.school-select-trigger:focus,
+.school-select-trigger[data-state="open"] {
+  outline: none;
+  border-color: var(--school-border);
+  box-shadow: none;
+}
+.global-search:focus-within,
+.field-search:focus-within {
+  border-color: var(--school-border);
+  outline: none;
+  box-shadow: none;
+}
+.global-search input:focus,
+.field-search input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.school-select-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  min-width: 150px;
+  min-height: 42px;
+  padding: 10px 13px;
+  border: 1px solid var(--school-border);
+  border-radius: 9px;
+  background: var(--school-surface);
+  color: var(--school-text);
+  font-family: var(--school-font);
+  font-size: var(--type-body);
+  line-height: 1.5;
+  text-align: left;
+}
+.school-select-trigger > span:last-child {
+  display: flex;
+  color: var(--school-muted);
+}
+.school-select-trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.school-select-content {
+  z-index: 100;
+  min-width: var(--radix-select-trigger-width);
+  max-height: min(320px, var(--radix-select-content-available-height));
+  overflow: hidden;
+  border: 1px solid var(--school-border);
+  border-radius: 10px;
+  background: var(--school-surface);
+  color: var(--school-text);
+  box-shadow: 0 8px 30px #30397218;
+  font-family: var(--school-font);
+  font-size: var(--type-body);
+  line-height: 1.5;
+}
+.school-select-list {
+  padding: 5px;
+}
+.school-select-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 38px;
+  padding: 9px 34px 9px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+.school-select-option[data-highlighted],
+.school-select-option[data-state="checked"] {
+  background: var(--school-soft);
+  color: var(--school-primary);
+}
+.school-select-option[data-disabled] {
+  opacity: 0.45;
+  pointer-events: none;
+}
+.school-select-check {
+  position: absolute;
+  right: 12px;
+  display: flex;
+}
+.school-select-scroll {
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+  color: var(--school-primary);
+}

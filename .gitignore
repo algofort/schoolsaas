@@ -1,0 +1,22 @@
+
+.schoolapp-research-credentials.txt
+
+# Dependencies and build outputs
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+
+# Local secrets and editor state
+.env*
+!.env.example
+.vercel/
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+
+# Raw competitor archives are research inputs, not application source.
+research/schoolapp/evidence/
